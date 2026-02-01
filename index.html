@@ -8,106 +8,128 @@
 </head>
 <body>
 
-    <!-- NAV -->
-    <nav>
-        <a href="#home">Home</a>
-        <a href="#about">About</a>
-        <a href="#projects">Projects</a>
-        <a href="#assignments">Assignments</a>
-        <a href="#learnings">Learnings</a>
-    </nav>
+<nav>
+    <a href="#home">Home</a>
+    <a href="#about">About</a>
+    <a href="#projects">Projects</a>
+    <a href="#assignments">Assignments</a>
+    <a href="#learnings">Learnings</a>
+</nav>
 
-    <!-- HERO / HOME -->
-    <section id="home" class="hero">
-        <div class="hero-content">
+<!-- HERO -->
+<section id="home" class="hero reveal">
+    <img src="assests/profile.jpeg" class="hero-img" alt="Rakshit Tyagi">
 
-            <img class="hero-img" src="assests/profile.jpeg" alt="Rakshit Tyagi">
+    <h1>Rakshit Tyagi</h1>
+    <p class="hero-tagline">Tech Enthusiast • Learner • Builder</p>
 
-            <h1>Rakshit Tyagi</h1>
+    <p class="hero-intro">
+        I enjoy exploring technology, understanding how systems work behind
+        the scenes, and turning curiosity into meaningful projects.
+    </p>
 
-            <p class="hero-tagline">
-                Tech Enthusiast • Learner • Builder
-            </p>
+    <div class="scroll-indicator">↓</div>
+</section>
 
-            <p class="hero-intro">
-                I like exploring technology, understanding how systems work
-                behind the scenes, and turning curiosity into code.
-            </p>
+<!-- ABOUT -->
+<section id="about" class="section reveal">
+    <h2>About Me</h2>
+    <p>
+        I’m a curious and friendly tech enthusiast who enjoys experimenting
+        with new ideas and learning by building. I like breaking down problems,
+        understanding their logic, and implementing clean solutions.
+    </p>
+    <p>
+        Whether it’s UI design, debugging, or system logic, I enjoy the process
+        of improving things step by step.
+    </p>
+</section>
 
-            <div class="scroll-indicator">↓</div>
+<!-- PROJECTS -->
+<section id="projects" class="section reveal">
+    <h2>Projects</h2>
+
+    <div class="project-grid">
+
+        <div class="project-card">
+            <img src="assets/projects/boolean.jpeg" alt="Boolean Evaluator">
+            <div class="project-content">
+                <h3>Boolean Expression Evaluator</h3>
+                <p>
+                    Designed the UI and handled testing, debugging, and validation
+                    of Boolean expressions.
+                </p>
+                <span>UI Design • Testing • Debugging</span>
+            </div>
         </div>
-    </section>
 
-    <!-- ABOUT -->
-    <section id="about" class="section">
-        <h2>About Me</h2>
+        <div class="project-card">
+            <img src="assets/projects/monty.png" alt="Monty Hall">
+            <div class="project-content">
+                <h3>Monty Hall Simulation</h3>
+                <p>
+                    Built the interface and implemented the full probability
+                    mechanism behind the simulation.
+                </p>
+                <span>UI • Core Logic</span>
+            </div>
+        </div>
 
-        <p>
-            I’m <strong>Rakshit Tyagi</strong>, someone who enjoys experimenting
-            with new ideas and technologies. I like breaking things down,
-            understanding the logic behind them, and building projects that
-            help me learn by doing.
-        </p>
+        <div class="project-card">
+            <img src="assets/projects/zap.png" alt="ZAP">
+            <div class="project-content">
+                <h3>ZAP (In Progress)</h3>
+                <p>
+                    A tool to convert raw gameplay footage into refined
+                    YouTube-style reel edits inspired by Valorant.
+                </p>
+                <span>UI • Video Processing • System Design</span>
+            </div>
+        </div>
 
-        <p>
-            I’m friendly by nature, comfortable working with others, and always
-            excited to explore something new — whether it’s a programming
-            concept, a tool, or a project.
-        </p>
-    </section>
+    </div>
+</section>
 
-    <!-- PROJECTS -->
-    <section id="projects" class="section">
-        <h2>Projects</h2>
+<!-- ASSIGNMENTS -->
+<section id="assignments" class="section reveal">
+    <h2>Assignments</h2>
+    <a href="assets/Assignment_Profiling_Sheet.pdf" target="_blank">
+        📄 View Profiling Assignment (PDF)
+    </a>
+</section>
 
-        <ul>
-            <li>
-                <strong>Boolean Expression Evaluator</strong><br>
-                Designed the UI and handled testing, debugging, and validation
-                of Boolean expressions.
-            </li>
+<!-- LEARNINGS -->
+<section id="learnings" class="section reveal">
+    <h2>Learnings</h2>
+    <ul>
+        <li>C & C++</li>
+        <li>Python Basics</li>
+        <li>Data Structures & Algorithms</li>
+        <li>Machine Learning Basics</li>
+        <li>Git & GitHub</li>
+    </ul>
+</section>
 
-            <li>
-                <strong>Monty Hall Simulation</strong><br>
-                Built the interface and implemented the complete probability
-                mechanism behind the simulation.
-            </li>
+<footer>
+    © 2026 Rakshit Tyagi
+</footer>
 
-            <li>
-                <strong>ZAP (In Progress)</strong><br>
-                Developing a tool to convert raw gameplay footage into refined
-                YouTube-style reel edits inspired by Valorant clips.
-            </li>
-        </ul>
-    </section>
+<script>
+const reveals = document.querySelectorAll(".reveal");
 
-    <!-- ASSIGNMENTS -->
-    <section id="assignments" class="section">
-        <h2>Assignments</h2>
+const observer = new IntersectionObserver(entries => {
+    entries.forEach(entry => {
+        if (entry.isIntersecting) {
+            entry.target.classList.add("active");
+        }
+    });
+}, { threshold: 0.15 });
 
-        <a href="assets/Assignment_Profiling_Sheet.pdf" target="_blank">
-            📄 View Profiling Assignment (PDF)
-        </a>
-    </section>
-
-    <!-- LEARNINGS -->
-    <section id="learnings" class="section">
-        <h2>Learnings</h2>
-
-        <ul>
-            <li>C & C++</li>
-            <li>Python Basics</li>
-            <li>Data Structures & Algorithms</li>
-            <li>Machine Learning Basics</li>
-            <li>Git & GitHub</li>
-        </ul>
-    </section>
-
-    <footer>
-        © 2026 Rakshit Tyagi
-    </footer>
+reveals.forEach(r => observer.observe(r));
+</script>
 
 </body>
 </html>
+
 
 
